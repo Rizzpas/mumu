@@ -1,0 +1,31 @@
+/* Jumpscare effect styles (Level 5 only) */
+
+.jumpscareOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Full-screen red flash */
+  background: #cc0000;
+  animation: jumpscare-flash 0.15s ease-in-out infinite,
+             shake 0.1s ease-in-out infinite;
+}
+
+.jumpscareContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display);
+}
+
+.jumpscareText {
+  font-size: clamp(4rem, 15vw, 10rem);
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  animation: heartbeat 0.2s ease-in-out infinite;
+}

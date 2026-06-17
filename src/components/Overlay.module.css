@@ -1,0 +1,139 @@
+/* Overlay styles shared by LevelComplete, GameOver, and Victory screens */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background: var(--color-bg-overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fade-in 0.4s ease-out;
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  animation: slide-up 0.5s ease-out 0.1s both;
+}
+
+.titleWon {
+  color: var(--color-start);
+  text-shadow: 0 0 20px var(--color-start-glow), 0 0 40px var(--color-start-glow);
+}
+
+.titleLost {
+  color: var(--color-finish);
+  text-shadow: 0 0 20px var(--color-finish-glow), 0 0 40px var(--color-finish-glow);
+}
+
+.titleVictory {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #eab308);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.4));
+}
+
+.subtitle {
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2xl);
+  animation: slide-up 0.5s ease-out 0.2s both;
+}
+
+.emoji {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: var(--space-lg);
+  animation: slide-up 0.5s ease-out;
+}
+
+.actionButton {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-normal);
+  animation: slide-up 0.5s ease-out 0.3s both;
+  letter-spacing: 0.02em;
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+  border: 2px solid rgba(34, 197, 94, 0.5);
+  color: var(--color-start);
+}
+
+.buttonPrimary:hover {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.2));
+  border-color: var(--color-start);
+  box-shadow: 0 0 20px var(--color-start-glow);
+  transform: translateY(-2px);
+}
+
+.buttonDanger {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1));
+  border: 2px solid rgba(239, 68, 68, 0.5);
+  color: var(--color-finish);
+}
+
+.buttonDanger:hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.2));
+  border-color: var(--color-finish);
+  box-shadow: 0 0 20px var(--color-finish-glow);
+  transform: translateY(-2px);
+}
+
+.buttonGold {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.1));
+  border: 2px solid rgba(251, 191, 36, 0.5);
+  color: #fbbf24;
+}
+
+.buttonGold:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.2));
+  border-color: #fbbf24;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  transform: translateY(-2px);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+.levelInfo {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+  margin-top: var(--space-lg);
+  animation: slide-up 0.5s ease-out 0.4s both;
+}
+
+/* Stars for victory */
+.stars {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  animation: slide-up 0.5s ease-out 0.15s both;
+}
+
+.star {
+  font-size: 2rem;
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+.star:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 0.4s;
+}

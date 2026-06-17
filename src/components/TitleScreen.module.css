@@ -1,0 +1,162 @@
+/* TitleScreen styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mazeSizer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animated background gradient */
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%,
+      rgba(0, 240, 255, 0.06) 0%,
+      rgba(168, 85, 247, 0.03) 40%,
+      transparent 70%);
+  pointer-events: none;
+}
+
+/* Floating particles effect */
+.container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(2px 2px at 20% 30%, rgba(0, 240, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 40% 70%, rgba(168, 85, 247, 0.15), transparent),
+    radial-gradient(2px 2px at 80% 40%, rgba(255, 0, 229, 0.1), transparent),
+    radial-gradient(1.5px 1.5px at 60% 20%, rgba(0, 240, 255, 0.15), transparent),
+    radial-gradient(1.5px 1.5px at 30% 80%, rgba(168, 85, 247, 0.1), transparent);
+  background-size: 200px 200px, 300px 300px, 250px 250px, 150px 150px, 350px 350px;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-shadow:
+    0 0 10px rgba(0, 240, 255, 0.5),
+    0 0 30px rgba(0, 240, 255, 0.3),
+    0 0 60px rgba(0, 240, 255, 0.15);
+  animation: float 3s ease-in-out infinite;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  color: var(--color-text-secondary);
+  max-width: 28rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-2xl);
+  animation: fade-in 0.8s ease-out 0.3s both;
+  position: relative;
+  z-index: 1;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  animation: fade-in 0.8s ease-out 0.5s both;
+  position: relative;
+  z-index: 1;
+}
+
+.instructionLine {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.instructionIcon {
+  font-size: 1.1rem;
+}
+
+.startButton {
+  position: absolute;
+  left: 2%;
+  top: 40%;
+  width: 14%;
+  height: 18%;
+  background: var(--color-start);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  transition: all var(--transition-normal);
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.startButton:hover {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(168, 85, 247, 0.25));
+  border-color: var(--color-neon-cyan);
+  box-shadow: var(--shadow-neon-cyan);
+  transform: translateY(-2px);
+}
+
+.startButton:active {
+  transform: translateY(0);
+}
+
+.mobileNote {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+  margin-top: var(--space-lg);
+  animation: fade-in 0.8s ease-out 0.9s both;
+  position: relative;
+  z-index: 1;
+}
+
+/* Version/credit */
+.version {
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  opacity: 0.3;
+}
